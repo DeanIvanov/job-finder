@@ -28,6 +28,7 @@ public class JobsBGServiceImpl implements JobsBGService {
         SeleniumConfiguration seleniumConfiguration = new SeleniumConfiguration(timeout);
         WebDriver driver = seleniumConfiguration.getNewDriver(WEBSITE_ADDRESS);
 
+        System.out.println("\n\nExtracting all offers from page 1 of jobs.bg\n");
         return getOffersFromPage(20, driver);
     }
 
