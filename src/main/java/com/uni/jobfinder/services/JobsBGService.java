@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface JobsBGService {
 
-    String getAllOffers();
-    String getLimited(int total);
+    String getAllOffers(int timeout);
+    String getLimited(int total, int timeout);
 
 }

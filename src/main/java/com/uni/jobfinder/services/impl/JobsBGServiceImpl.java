@@ -22,10 +22,10 @@ public class JobsBGServiceImpl implements JobsBGService {
 
     // get all offers from jobs.bg page
     @Override
-    public String getAllOffers() {
+    public String getAllOffers(int timeout) {
 
         // new selenium drive for jobs.bg with timeout
-        SeleniumConfiguration seleniumConfiguration = new SeleniumConfiguration(5);
+        SeleniumConfiguration seleniumConfiguration = new SeleniumConfiguration(timeout);
         WebDriver driver = seleniumConfiguration.getNewDriver(WEBSITE_ADDRESS);
 
         return getOffersFromPage(20, driver);
@@ -55,10 +55,10 @@ public class JobsBGServiceImpl implements JobsBGService {
 
     // get offers from jobs.bg page up to the desired total amount
     @Override
-    public String getLimited(int total) {
+    public String getLimited(int total, int timeout) {
 
         // new selenium drive for jobs.bg with timeout
-        SeleniumConfiguration seleniumConfiguration = new SeleniumConfiguration(5);
+        SeleniumConfiguration seleniumConfiguration = new SeleniumConfiguration(timeout);
         WebDriver driver = seleniumConfiguration.getNewDriver(WEBSITE_ADDRESS);
 
         System.out.println("\n\nExtracting the first " + total + " offers from page 1 of jobs.bg\n");
