@@ -13,6 +13,9 @@ import java.util.concurrent.TimeUnit;
 public class SeleniumConfiguration {
 
     int timeout;
+    
+    public SeleniumConfiguration() {
+    }
 
     public SeleniumConfiguration(int timeout) {
         this.timeout = timeout;
